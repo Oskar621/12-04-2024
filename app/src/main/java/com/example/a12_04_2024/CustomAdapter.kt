@@ -1,5 +1,5 @@
-package layout
-
+package com.example.a12_04_2024
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -17,27 +17,16 @@ class CustomAdapter(private val dataset : Array<String>) :
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val view : View = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataset.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.text.text = dataset[position]
     }
 }
